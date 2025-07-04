@@ -35,12 +35,13 @@ fun ARScreen(navController: NavController, model: String) {
     val childNodes = rememberNodes()
     val view = rememberView(engine = engine)
     val collisionSystem = rememberCollisionSystem(view = view)
-    val planeRenderer = remember {
+    val planeRender = remember {
         mutableStateOf(true)
     }
     val modelInstance = remember {
         mutableListOf<ModelInstance>()
     }
+
     val trackingFailureReason = remember {
         mutableStateOf<TrackingFailureReason?>(null)
     }
@@ -55,7 +56,7 @@ fun ARScreen(navController: NavController, model: String) {
         view = view,
         modelLoader = modelLoader,
         collisionSystem = collisionSystem,
-        planeRenderer = planeRenderer.value,
+        planeRenderer = planeRender.value,
         cameraNode = cameraNode,
         materialLoader = materialLoader,
         onTrackingFailureChanged = {

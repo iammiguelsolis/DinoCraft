@@ -9,6 +9,7 @@ import io.github.sceneview.loaders.ModelLoader
 import io.github.sceneview.model.ModelInstance
 import io.github.sceneview.node.CubeNode
 import io.github.sceneview.node.ModelNode
+import android.util.Log
 
 object Utils {
     val dinosaurios = mapOf(
